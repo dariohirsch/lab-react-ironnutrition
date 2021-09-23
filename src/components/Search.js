@@ -1,23 +1,18 @@
-import { Input } from "antd"
+import { Input, Divider } from "antd"
 import { useState } from "react"
 
 function Search(props) {
-	const [textSearch, setTextSearch] = useState("")
+	// const [filteredName, setFilteredName] = useState("")
 
 	const handleSearchInput = (e) => {
-		console.log(props.foodList)
-		// setTextSearch(e.target.value)
-		// console.log(textSearch)
+		// props.setTextSearch(e.target.value)
+		props.searchFood(e.target.value)
 	}
-
-	// function filter(e) {
-	// 	console.log(e)
-	// }
 
 	return (
 		<>
 			<label>Search:</label>
-			<Input value={textSearch} type="text" onChange={handleSearchInput} />
+			<Input type="text" onChange={handleSearchInput} />
 		</>
 	)
 }
